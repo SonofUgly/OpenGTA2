@@ -1,3 +1,4 @@
+language: cpp
 install: libglfw3-dev
 
 script:
