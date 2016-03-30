@@ -1,5 +1,8 @@
 language: cpp
-install: libglfw3-dev
 
+addons:
+  apt:
+    packages:
+    - libglfw3-dev
 script:
 - ./0-compile.sh
