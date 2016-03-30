@@ -1,2 +1,4 @@
+install: libglfw3-dev
+
 script:
 - ./0-compile.sh
