@@ -3,6 +3,6 @@ language: cpp
 addons:
   apt:
     packages:
-    - libglfw3-dev
+    - libglfw-dev
 script:
 - ./0-compile.sh
