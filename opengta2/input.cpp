@@ -6,14 +6,15 @@
 
 Input_Manager Input;
 
-void GLFWCALL charCallback(int key, int action) {
-	if( action != GLFW_PRESS ) { return; }
+void charCallback(GLFWwindow*, unsigned int key) {
+	// FIXME: Need to detect key presses in new GLFW3 way
+    //if( action != GLFW_PRESS ) { return; }
 	Console.keyboardInput(key);
 }
 
 void Input_Manager::Initialize() {
 	Client = BAD_ID;
-	glfwSetCharCallback(charCallback);
+	glfwSetCharCallback(Screen.mWindow, charCallback);
 }
 
 void Input_Manager::Frame() {
@@ -22,7 +23,7 @@ void Input_Manager::Frame() {
 		if (KeyRemap[i] && (!Console.Visible)) { //Block remappable input when console is active
 			//if (KeyRemap[i] > 1024) [
 			//keyPressed[i] = glfwGetNumberOfProcessors
-			keyPressed[i] = glfwGetKey(KeyRemap[i]);
+			keyPressed[i] = glfwGetKey(Screen.mWindow, KeyRemap[i]);
 		} else {
 			keyPressed[i] = 0;
 		}
@@ -38,11 +39,11 @@ int Input_Manager::IsKeyPressed(int keyID) {
 }
 
 int Input_Manager::IsKBKeyPressed(int kbkeyID) {
-	return glfwGetKey(kbkeyID);
+	return glfwGetKey(Screen.mWindow, kbkeyID);
 }
 
 int Input_Manager::IsKBKeyPressedOnce(int kbkeyID) {
-	int state = glfwGetKey(kbkeyID);
+	int state = glfwGetKey(Screen.mWindow, kbkeyID);
 	if (keyHeld[kbkeyID] && state) {
 		if (Timer.Time() - holdStartTime > 0.5f) {
 			if (Timer.Time() - prevHitTime > 0.025f) {

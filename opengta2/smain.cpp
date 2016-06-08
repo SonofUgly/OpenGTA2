@@ -1,6 +1,6 @@
 #include "opengta_sv.h"
 
-void GLFWCALL serverMain(void*) {
+void serverMain(void*) {
 	Thread.WaitForLock(MUTEX_STARTUP);
 	LockID lockID = Thread.EnterLock(MUTEX_SERVER_THREAD);
 	logWrite("OpenGTA2: Server initializing");

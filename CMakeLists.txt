@@ -25,7 +25,13 @@ if ("${CMAKE_BUILD_TYPE}" STREQUAL "")
   #message("RELEASE set")
 endif ()
 
+set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+add_subdirectory("3rdParty/glfw")
+
 include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/glfw/include
     ${CMAKE_CURRENT_SOURCE_DIR}/include
     ${CMAKE_CURRENT_SOURCE_DIR}/opengta2
     ${OPENGL_INCLUDE_DIRS}
@@ -120,7 +126,7 @@ add_executable(OpenGTA2 MACOSX_BUNDLE
     ${opengta2_src}
 )
 
-target_link_libraries(OpenGTA2 ${OPENGL_LIBRARIES})
+target_link_libraries(OpenGTA2 ${OPENGL_LIBRARIES} glfw)
 
 if(WIN32)
   target_link_libraries(OpenGTA2 wsock32 ws2_32)

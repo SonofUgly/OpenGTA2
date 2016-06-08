@@ -53,6 +53,8 @@ struct Screen_Manager {
 
 	//Is VBO supported?
 	bool VBOSupported;
+
+    GLFWwindow* mWindow = nullptr;
 };
 
 extern Screen_Manager Screen;

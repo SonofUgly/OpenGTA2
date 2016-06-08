@@ -8,7 +8,7 @@
 
 
 bool clientInitialLoadDone;
-void GLFWCALL clientInitialLoadThread(void*) {
+void clientInitialLoadThread(void*) {
 	LockID lockID = Thread.EnterLock(MUTEX_CRESOURCE_THREAD);
 		//This thread loads resources, so client doesn't freeze (and Windows shell doesn't complain)
 		Fonts.Initialize(); //Must be done before graphics, graphics initializer loads the fonts
@@ -24,7 +24,7 @@ void GLFWCALL clientInitialLoadThread(void*) {
 }
 
 //unsigned int __stdcall clientMain(void*) {
-void GLFWCALL clientMain(void*) {
+void clientMain(void*) {
 	LockID lockID = Thread.EnterLock(MUTEX_CLIENT_THREAD);
 	Thread.WaitForLock(MUTEX_STARTUP);
 	logWrite("OpenGTA2: Client initializing");
@@ -45,7 +45,7 @@ void GLFWCALL clientMain(void*) {
 		phase = !phase;
 
 		//Thread.Sleep();
-		glfwSwapBuffers();
+		glfwSwapBuffers(Screen.mWindow);
 
 		//Some resources must be loaded in this thread (for OpenGL driver to pick them up)
 		//MUTEX_RESOURCE_LOAD is set in following places:
@@ -91,7 +91,7 @@ void GLFWCALL clientMain(void*) {
 		if (Timer.Time() - LastTime > 1.0f) {
 			char titlestr[256];
 			sprintf(titlestr, "OpenGTA2 - %.2f FPS", Timer.FPS());
-			glfwSetWindowTitle(titlestr);
+			glfwSetWindowTitle(Screen.mWindow, titlestr);
 
 			LastTime = Timer.Time();
 		}
@@ -117,16 +117,16 @@ void GLFWCALL clientMain(void*) {
 			perfHUD.Render();
 		}
 
-		if (glfwGetKey(GLFW_KEY_UP))	Camera.Position.y -= Timer.dT() * 16.0f;
-		if (glfwGetKey(GLFW_KEY_DOWN))	Camera.Position.y += Timer.dT() * 16.0f;
-		if (glfwGetKey(GLFW_KEY_LEFT))	Camera.Position.x -= Timer.dT() * 16.0f;
-		if (glfwGetKey(GLFW_KEY_RIGHT)) Camera.Position.x += Timer.dT() * 16.0f;
-		if (glfwGetKey('U'))			Camera.Position.z -= Timer.dT() * 16.0f;
-		if (glfwGetKey('J'))			Camera.Position.z += Timer.dT() * 16.0f;
+		if (glfwGetKey(Screen.mWindow, GLFW_KEY_UP))	Camera.Position.y -= Timer.dT() * 16.0f;
+		if (glfwGetKey(Screen.mWindow, GLFW_KEY_DOWN))	Camera.Position.y += Timer.dT() * 16.0f;
+		if (glfwGetKey(Screen.mWindow, GLFW_KEY_LEFT))	Camera.Position.x -= Timer.dT() * 16.0f;
+		if (glfwGetKey(Screen.mWindow, GLFW_KEY_RIGHT)) Camera.Position.x += Timer.dT() * 16.0f;
+		if (glfwGetKey(Screen.mWindow, 'U'))			Camera.Position.z -= Timer.dT() * 16.0f;
+		if (glfwGetKey(Screen.mWindow, 'J'))			Camera.Position.z += Timer.dT() * 16.0f;
 
-		glfwSwapBuffers();
+		glfwSwapBuffers(Screen.mWindow);
 
-		if ((!glfwGetWindowParam(GLFW_OPENED)) || (glfwGetKey(GLFW_KEY_ESC))) Game.Running = false;
+		if ((glfwWindowShouldClose(Screen.mWindow)) || (glfwGetKey(Screen.mWindow, GLFW_KEY_ESCAPE))) Game.Running = false;
 	}
 	Thread.Sleep(0.1f);
 

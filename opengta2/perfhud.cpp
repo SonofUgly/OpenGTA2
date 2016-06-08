@@ -409,12 +409,12 @@ void Perfomance_Display::DoPedTest() {
 	Fonts.Reset();
 
 	if (Convar.GetInt("perf_ped_enablekeys",1)) {
-		if (glfwGetKey('Q')) Peds[p]->Velocity.z = 2.0f;
-		if (glfwGetKey('Z')) Peds[p]->Velocity.z = -2.0f;
-		if (glfwGetKey('W')) Peds[p]->Velocity.y = -16.0f;
-		if (glfwGetKey('S')) Peds[p]->Velocity.y =  16.0f;
-		if (glfwGetKey('A')) Peds[p]->Velocity.x = -16.0f;
-		if (glfwGetKey('D')) Peds[p]->Velocity.x =  16.0f;
+		if (glfwGetKey(Screen.mWindow, 'Q')) Peds[p]->Velocity.z = 2.0f;
+		if (glfwGetKey(Screen.mWindow, 'Z')) Peds[p]->Velocity.z = -2.0f;
+		if (glfwGetKey(Screen.mWindow, 'W')) Peds[p]->Velocity.y = -16.0f;
+		if (glfwGetKey(Screen.mWindow, 'S')) Peds[p]->Velocity.y =  16.0f;
+		if (glfwGetKey(Screen.mWindow, 'A')) Peds[p]->Velocity.x = -16.0f;
+		if (glfwGetKey(Screen.mWindow, 'D')) Peds[p]->Velocity.x =  16.0f;
 	}
 
 	if (Convar.GetInt("perf_ped_enabletrace",0)) {

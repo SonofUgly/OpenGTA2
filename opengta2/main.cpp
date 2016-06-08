@@ -10,10 +10,10 @@ Random_Manager Random;
 #ifndef DEDICATED_SERVER
 	//unsigned int __stdcall clientMain(void*);
 	//unsigned int __stdcall localServerMain(void*);
-	void GLFWCALL clientMain(void*);
+	void clientMain(void*);
 #endif
 //unsigned int __stdcall serverMain(void*);
-void GLFWCALL serverMain(void*);
+void serverMain(void*);
 
 void memcheck() {
 

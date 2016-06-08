@@ -42,12 +42,12 @@
 typedef unsigned int uint;
 
 #ifdef _WIN32
-	#define snprintf _snprintf
+	//#define snprintf _snprintf
 	#define snscanf _snscanf
 #endif
 
 //GLFW and standard libs
-#include <GL/glfw.h>
+#include <GLFW/glfw3.h>
 #include <math.h>
 #include <stdlib.h>
 

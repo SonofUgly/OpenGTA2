@@ -13,7 +13,7 @@
 
 Screen_Manager Screen;
 
-void screenSizeChanged(int width, int height) {
+void screenSizeChanged(GLFWwindow* /*window*/, int width, int height) {
 	Screen.Window.Width = (float)width;
 	Screen.Window.Height = (float)height;
 	Screen.Window.Size.x = (float)width;
@@ -38,21 +38,18 @@ bool Screen_Manager::Initialize(int width, int height, bool fullscreen) {
 	Height = (float)height;
 
 	logWrite("Initializing output screen");//FIXME: fullscreen
-	int mode = GLFW_WINDOW;
-	if (fullscreen) mode = GLFW_FULLSCREEN;
 	//glfwOpenWindowHint(GLFW_FSAA_SAMPLES,4);
-	if (!glfwOpenWindow(width,height,8,8,8,8,24,0,mode)) {
+    mWindow = glfwCreateWindow(width, height, "OpenGTA2", nullptr, nullptr);
+	if (!mWindow) {
 		logWrite("Failed to initialize screen - reverting to text mode");
 		//FIXME: add text mode
 		glfwTerminate();
 		return false;
     }
 
-	glfwSetWindowTitle("OpenGTA2");
-
     //glfwEnable(GLFW_STICKY_KEYS);
     glfwSwapInterval(0);
-	glfwSetWindowSizeCallback(screenSizeChanged);
+    glfwSetWindowSizeCallback(mWindow, screenSizeChanged);
 
 	glViewport(0, 0, (int)Width, (int)Height);
 

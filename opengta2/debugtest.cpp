@@ -19,7 +19,7 @@ extern bool logDisableDebugOutput;
 
 
 
-void GLFWCALL debugThread_Loop(void* t) {
+void debugThread_Loop(void* t) {
 	int tid = (int)t;
 	logWrite("Thread %d starts",tid);
 	for (int i = 0; i < 25; i++) {
@@ -28,7 +28,7 @@ void GLFWCALL debugThread_Loop(void* t) {
 	logWrite("Thread %d end",tid);
 }
 
-void GLFWCALL debugThread_InfLoop(void* t) {
+void debugThread_InfLoop(void* t) {
 	logWrite("Infinite loop thread %d starts, thread ID 0x%X",(int)t,Thread.GetCurrentThreadID());
 	while (1) Thread.Sleep();
 }

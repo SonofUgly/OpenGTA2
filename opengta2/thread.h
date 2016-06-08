@@ -2,7 +2,9 @@
 #define THREAD_H
 
 //#include "opengta.h"
-#include <GL/glfw.h>
+#include <GLFW/glfw3.h>
+#include <thread>
+#include <mutex>
 
 //      Locks until ?
 #define MUTEX_STARTUP			0
@@ -36,9 +38,9 @@
 #define MUTEX_NETWORK_CLIST		14
 #define MUTEX_COUNT				15
 
-typedef GLFWthread ThreadID;
+typedef std::thread* ThreadID;
 typedef unsigned int LockID;
-typedef void (GLFWCALL ThreadFunction)(void*);
+typedef void (ThreadFunction)(void*);
 
 //typedef unsigned int __stdcall ThreadFunction(void*);
 
@@ -46,10 +48,7 @@ struct Thread_Manager {
 	//Thread manager functions
 	void Initialize();
 	void Deinitialize();
-	GLFWmutex mutexLocks[MUTEX_COUNT];
-#ifndef _WIN32
-	int mutexNumLocks[32][MUTEX_COUNT];
-#endif
+	std::mutex mutexLocks[MUTEX_COUNT];
 
 	//Thread functions (all threads share address space)
 	ThreadID Create(ThreadFunction* funcptr, void* param);
