@@ -35,6 +35,13 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/include
     ${CMAKE_CURRENT_SOURCE_DIR}/opengta2
     ${OPENGL_INCLUDE_DIRS}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/chunkmerge
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/genfont
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/gmp2map
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/sdt2wav
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/sty2tex
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/txt2chunked
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/shared
 )
 
 SET(opengta2_src
@@ -122,9 +129,49 @@ opengta2/vector.h
 #    rsc/app.ico)
 #endif()
 
+
+
 add_executable(OpenGTA2 MACOSX_BUNDLE
     ${opengta2_src}
 )
+
+add_library(texture_atlas STATIC 
+   tools/shared/texatlas.cpp
+   tools/shared/texatlas.h
+)
+
+add_executable(chunkmerge MACOSX_BUNDLE
+   tools/chunkmerge/chunkmerge.cpp
+)
+target_link_libraries(chunkmerge ${OPENGL_LIBRARIES} glfw texture_atlas)
+
+
+add_executable(genfont MACOSX_BUNDLE
+   tools/genfont/genfont.cpp
+)
+target_link_libraries(genfont ${OPENGL_LIBRARIES} glfw texture_atlas)
+
+add_executable(gmp2map MACOSX_BUNDLE
+   tools/gmp2map/gmp2map.cpp
+)
+target_link_libraries(gmp2map ${OPENGL_LIBRARIES} glfw texture_atlas)
+
+add_executable(sdt2wav MACOSX_BUNDLE
+   tools/sdt2wav/sdt2wav.cpp
+)
+target_link_libraries(sdt2wav ${OPENGL_LIBRARIES} glfw texture_atlas)
+
+add_executable(sty2tex MACOSX_BUNDLE
+   tools/sty2tex/sty2tex.cpp
+   tools/sty2tex/sty2tex.h
+   tools/sty2tex/tilewrite.cpp
+)
+target_link_libraries(sty2tex ${OPENGL_LIBRARIES} glfw texture_atlas)
+
+add_executable(txt2chunked MACOSX_BUNDLE
+   tools/txt2chunked/txt2chunked.cpp
+)
+target_link_libraries(txt2chunked ${OPENGL_LIBRARIES} glfw texture_atlas)
 
 target_link_libraries(OpenGTA2 ${OPENGL_LIBRARIES} glfw)
 
