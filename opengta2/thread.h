@@ -48,7 +48,7 @@ struct Thread_Manager {
 	//Thread manager functions
 	void Initialize();
 	void Deinitialize();
-	std::mutex mutexLocks[MUTEX_COUNT];
+	std::recursive_mutex mutexLocks[MUTEX_COUNT];
 
 	//Thread functions (all threads share address space)
 	ThreadID Create(ThreadFunction* funcptr, void* param);
