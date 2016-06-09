@@ -4,5 +4,10 @@ addons:
   apt:
     packages:
     - libglfw-dev
+    - cmake
+    
 script:
-- ./0-compile.sh
+- mkdir build
+- cd build
+- cmake ..
+- make -j2
