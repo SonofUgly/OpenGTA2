@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Shared">
+      <UniqueIdentifier>{22e25546-d84f-464c-b0c8-0dd6d58a578d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared\Base">
+      <UniqueIdentifier>{ad476bdd-cfcb-49cd-8a9d-551488fd217d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared\Math">
+      <UniqueIdentifier>{c18bea25-8551-407e-8c56-4ff03604edb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Server">
+      <UniqueIdentifier>{085ff52a-9bc5-433e-95fd-c01a88aa43fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Client">
+      <UniqueIdentifier>{055ddedb-b1f1-4cdd-8452-c1ce171fe702}</UniqueIdentifier>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files\Client\Base">
+      <UniqueIdentifier>{34f47c7a-9f8b-44cc-868e-7cd9864fcb00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Shared">
+      <UniqueIdentifier>{7b9de692-e96c-4054-8963-898c13b155dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shared\Base">
+      <UniqueIdentifier>{55635b71-f2a6-45b1-b01f-5daa5e691970}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shared\Math">
+      <UniqueIdentifier>{94a79162-de2f-4cae-b00e-7ca9b8976bf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Server">
+      <UniqueIdentifier>{5d0f7c8f-6c38-43b4-b2be-0e928096d7b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Client">
+      <UniqueIdentifier>{218798a6-4a1f-4881-8c82-f1493173b771}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Client\Base">
+      <UniqueIdentifier>{68e5163d-40dd-478b-b9e2-9f5c0586d926}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="collision.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="convar.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="debugtest.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="map.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="map_geom.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="utf8.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="chunkload.cpp">
+      <Filter>Source Files\Shared\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="log.cpp">
+      <Filter>Source Files\Shared\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="malloc.cpp">
+      <Filter>Source Files\Shared\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="thread.cpp">
+      <Filter>Source Files\Shared\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="timer.cpp">
+      <Filter>Source Files\Shared\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="matrix.cpp">
+      <Filter>Source Files\Shared\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="vector.cpp">
+      <Filter>Source Files\Shared\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="clientlist.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="network.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="ped.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="ped_mgr.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="smain.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="cmain.cpp">
+      <Filter>Source Files\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="console.cpp">
+      <Filter>Source Files\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>Source Files\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="map_geom_cl.cpp">
+      <Filter>Source Files\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="map_render.cpp">
+      <Filter>Source Files\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="ped_render.cpp">
+      <Filter>Source Files\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="perfhud.cpp">
+      <Filter>Source Files\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="anim.cpp">
+      <Filter>Source Files\Client\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Source Files\Client\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="draw.cpp">
+      <Filter>Source Files\Client\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="font.cpp">
+      <Filter>Source Files\Client\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics.cpp">
+      <Filter>Source Files\Client\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="screen.cpp">
+      <Filter>Source Files\Client\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_atlas.cpp">
+      <Filter>Source Files\Client\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="vbuffer.cpp">
+      <Filter>Source Files\Client\Base</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="collision.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="convar.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="format_rmp.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="input_keys.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="map.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="map_geom.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="opengta.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="utf8.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="chunkload.h">
+      <Filter>Header Files\Shared\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="darray.h">
+      <Filter>Header Files\Shared\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="log.h">
+      <Filter>Header Files\Shared\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="malloc.h">
+      <Filter>Header Files\Shared\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="thread.h">
+      <Filter>Header Files\Shared\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="timer.h">
+      <Filter>Header Files\Shared\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix.h">
+      <Filter>Header Files\Shared\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="random.h">
+      <Filter>Header Files\Shared\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="vector.h">
+      <Filter>Header Files\Shared\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="clientlist.h">
+      <Filter>Header Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="message.h">
+      <Filter>Header Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="network.h">
+      <Filter>Header Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="opengta_sv.h">
+      <Filter>Header Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="ped.h">
+      <Filter>Header Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="ped_mgr.h">
+      <Filter>Header Files\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="console.h">
+      <Filter>Header Files\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>Header Files\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="map_geom_cl.h">
+      <Filter>Header Files\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="map_render.h">
+      <Filter>Header Files\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="opengta_cl.h">
+      <Filter>Header Files\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="ped_render.h">
+      <Filter>Header Files\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="perfhud.h">
+      <Filter>Header Files\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="anim.h">
+      <Filter>Header Files\Client\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Header Files\Client\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="draw.h">
+      <Filter>Header Files\Client\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="font.h">
+      <Filter>Header Files\Client\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics.h">
+      <Filter>Header Files\Client\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="screen.h">
+      <Filter>Header Files\Client\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="vbuffer.h">
+      <Filter>Header Files\Client\Base</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

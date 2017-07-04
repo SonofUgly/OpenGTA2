@@ -44,6 +44,7 @@ typedef unsigned int uint;
 #ifdef _WIN32
 	//#define snprintf _snprintf
 	#define snscanf _snscanf
+	#define GLFW_DLL
 #endif
 
 //GLFW and standard libs
