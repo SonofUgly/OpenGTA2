@@ -2,7 +2,7 @@
 #include "stdlib.h"
 #include "string.h"
 #include "../../include/fread.h"
-#ifdef WIN32
+#ifdef _WIN32
 	#include ".\..\..\include\dirent.h"
 #else
 	#include <dirent.h>
